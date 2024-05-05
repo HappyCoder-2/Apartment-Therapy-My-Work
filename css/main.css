@@ -1,0 +1,336 @@
+@font-face {
+  font-family: "font-inria";
+  src: url(../fonts/InriaSerif-Bold.woff2);
+}
+@font-face {
+  font-family: "font-roboto";
+  src: url(../fonts/Roboto-Medium.woff2);
+}
+@font-face {
+  font-family: "material-icons-outlined";
+  src: url(../fonts/MaterialIconsOutlined-Regular.woff2);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+header {
+  background-image: url(../images/hero-shot.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden !important;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  padding-top: 20px;
+  position: fixed;
+  width: 90%;
+  z-index: 10;
+}
+header nav .burger-menu {
+  display: none;
+}
+@media (max-width: 768px) {
+  header nav .burger-menu {
+    display: block;
+  }
+}
+header nav .menu {
+  width: 55%;
+  display: flex;
+  justify-content: space-between;
+}
+header nav .menu .close-menu {
+  position: absolute;
+  right: 20px;
+  display: none;
+}
+@media (max-width: 768px) {
+  header nav .menu .close-menu {
+    display: block;
+  }
+}
+header nav .menu a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  font-family: font-inria;
+}
+@media (max-width: 768px) {
+  header nav .menu {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  header nav .mobile-menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 60%;
+    height: 100vh;
+    top: 0;
+    left: -100%;
+    justify-content: flex-start;
+    padding-top: 25px;
+    overflow-x: hidden;
+    transition: all 0.5s ease-in;
+  }
+  header nav .mobile-menu a {
+    padding: 10px;
+  }
+}
+header nav .overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 0;
+  left: -120%;
+  overflow: hidden !important;
+  transition: all 0.5s ease-in;
+  display: none;
+}
+@media (max-width: 768px) {
+  header nav .overlay {
+    display: block;
+  }
+}
+header nav .overlay-open {
+  left: 0;
+  transition: all 0.3s ease-in;
+}
+header nav .open-mobile-menu {
+  left: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  z-index: 3;
+}
+header .header-CTA {
+  font-size: 28px;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20%;
+}
+header .header-CTA button {
+  padding: 13px 50px;
+  border: 2px solid #000;
+  text-transform: uppercase;
+  font-family: font-inria;
+  background-color: transparent;
+  margin-top: 20px;
+}
+header .header-CTA button:hover {
+  background-color: #D6CCC2;
+}
+
+main {
+  font-family: font-inria;
+  color: #000;
+}
+main .main-top {
+  font-size: 20px;
+  margin: 50px 0;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .main-top .decoration-line {
+  width: 100px;
+  height: 3px;
+  border-radius: 5px;
+  background-color: #000;
+  margin-top: 15px;
+}
+main .main-top span {
+  font-family: font-roboto;
+}
+main .main-post {
+  align-content: center;
+  justify-content: space-between;
+  display: flex;
+}
+main .main-post .main-post-title {
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #D6CCC2;
+  width: 100%;
+}
+main .main-post .main-post-title button {
+  padding: 13px 50px;
+  border: 2px solid #000;
+  text-transform: uppercase;
+  font-family: font-inria;
+  background-color: transparent;
+}
+main .main-post .main-post-title button:hover {
+  background-color: #D6CCC2;
+}
+main .main-post .main-post-title span {
+  padding-bottom: 20px;
+  font-size: 28px;
+  max-width: 300px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  main .main-post {
+    flex-direction: column;
+  }
+  main .main-post img {
+    width: 100%;
+  }
+  main .main-post .main-post-title {
+    padding: 15px 0;
+  }
+}
+main .about {
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0;
+}
+main .about span {
+  font-size: 28px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+main .about p {
+  font-size: 22px;
+  font-family: font-roboto;
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+}
+main .main-content {
+  display: flex;
+  max-width: 900px;
+  margin: 20px auto;
+}
+main .main-content .filters {
+  width: 30%;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+main .main-content .filters .filter-section ul {
+  list-style: none;
+  padding-left: 30px;
+}
+main .main-content .filters .filter-section ul li {
+  font-family: font-roboto;
+  font-size: 18px;
+}
+main .main-content .filters .filter-section .filter-section-title {
+  font-family: font-inria;
+  font-size: 20px;
+  padding: 10px 0;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+}
+main .main-content .filters .filter-section .filter-section-title .filters-icon-expand {
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 13px;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+main .main-content .filters .filter-section .icon-expand .filters-icon-expand {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+main .main-content .filters .filter-section .filters-container {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+main .main-content .filters .filter-section .open-filters {
+  max-height: 300px;
+  height: 100%;
+  transition: height 0.3s ease-in-out;
+}
+main .main-content .products {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 10px;
+}
+@media (max-width: 768px) {
+  main .main-content .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 320px) {
+  main .main-content .products {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+main .main-content .products .single-product {
+  font-family: font-roboto;
+  font-size: 18px;
+}
+main .main-content .products .single-product span {
+  padding: 5px 0;
+  background-color: #D6CCC2;
+  border-radius: 0;
+  width: 100%;
+  border: 1px solid #000;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-family: font-inria;
+  display: block;
+  text-align: center;
+}
+
+footer {
+  align-content: center;
+  justify-content: space-around;
+  display: flex;
+  background-color: #D6CCC2;
+  font-family: font-inria;
+  font-size: 20px;
+  padding: 20px 50px;
+  align-items: center;
+}
+footer .footer-item {
+  align-content: start;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+footer .footer-item a {
+  text-decoration: none;
+  color: #000;
+  padding: 8px 0;
+}
+footer .social-media {
+  flex-direction: row;
+}
+footer .social-media img {
+  margin: 0 8px;
+}
+
+img {
+  background-size: cover;
+  overflow:hidden;
+}
